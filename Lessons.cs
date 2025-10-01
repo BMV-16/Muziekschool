@@ -5,7 +5,8 @@ public class Lessons
     string title;
     int startdate;
     int lessons;
-    
+    public List<Student> students = new List<Student>();
+    public List<Teacher> teacher = new List<Teacher>();
     public Lessons(string title, int startdate, int lessons)
     {
         this.title = title;
@@ -41,4 +42,23 @@ public class Lessons
     {
         this.lessons = lessons;
     }
+
+    public void printParticipants()
+    {
+        Console.WriteLine(" Deze mensen zijn ingeschreven :");
+        foreach (Student student in students)
+        {
+            Console.WriteLine(student.getName());
+        }
+    }
+
+    public void printTeachers()
+    {
+        Console.WriteLine(" Deze docenten zijn ingeschreven :");
+        foreach (Teacher teacher in teacher)
+        {
+            Console.WriteLine(teacher.getName());
+        }
+    }
+    
 }
